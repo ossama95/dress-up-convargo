@@ -1,23 +1,162 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CSS/HTML Workshop with Convargo</title>
-  </head>
-  <body>
-    <div id="trucker">
-      <input class="name" type="text" placeholder="Trucker name"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
-    </div>
-    <div id="shipper">
-      <input class="name" type="text" placeholder="Shipper name"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="volume" type="number" placeholder="Volume in m3"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script src="convargo.js"></script>
-    <script src="index.js"></script>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>Convargo</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+	<!-- Bootstrap itself -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/convargo.css">
+
+	<!-- Fonts -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert">
+
+<nav class="mainmenu">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#head" class="active">Accueil</a></li>
+				<li><a href="#about">En savoir plus</a></li>
+				<li><a href="#simulation">Simulation</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<h1 class="title">Convargo</h1>
+				<h2 class="subtitle">Expédiez votre marchandise moins cher</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+					La plateforme permet aux professionnels d'expédier leur marchandise dans toute l'Europe en quelques clics.<br>
+				 Renseignez vos besoins d'expédition, obtenez un prix fixe et accédez à plus de 2 500 transporteurs de qualité.
+				</h3>
+
+				<p><a href="#simulation" class="btn btn-default btn-lg">Simuler un envoie !</a></p>
+
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+
+	</div>
+</section>
+
+<!-- Second (About) section -->
+<section class="section" id="about">
+	<div class="container">
+
+		<h2 class="text-center title">Présentation</h2>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<h5><strong>Qu'est-ce que convargo ?<br></strong></h5>
+				<p>Convargo est une start-up tech en forte croissance qui révolutionne le transport routier de marchandises en mettant en relation expéditeurs et transporteurs en temps réel. </p>
+			</div>
+			<div class="col-sm-4">
+				<h5><strong>Quelques chiffres<br></strong></h5>
+				<p>1 CEO, Maxime Legardez (ex-Rocket et serial entrepreneur)
+18 millions d’euros levés auprès d’investisseurs tels que Xavier Niel (Free et Kima Ventures), Jacques- Antoine Granjon (Vente Privée) et de fonds européens préstigieux (Inventure Partners et Earybird).18 mois d’existence
+45 personnes basées à Paris 75009</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Third (Works) section -->
+<section class="section" id="simulation">
+	<div class="container">
+
+		<h2 class="text-center title">Simulation de prix</h2>
+		<p class="lead text-center">
+			Dans cette section vous pourrez simuler le prix d'un envoie<br>
+			de paquet en fonction des parametres suivants :
+		</p>
+</div>
+<div class="simulation">
+
+			<div class="col-sm-4 col-sm-offset-2"  id="trucker">
+			<input class="name" type="text" placeholder="Trucker name"/>
+			<br>
+			<input class="price-by-km" type="number" placeholder="Price by km"/>
+			<br>
+			<input class="price-by-cubic" type="number" placeholder="Price by m3"/>
+		</div>
+
+		<div class="col-sm-4" id="shipper">
+			<input class="name" type="text" placeholder="Shipper name"/>
+			<br>
+			<input class="distance" type="number" placeholder="Distance in km"/>
+			<br>
+			<input class="volume" type="number" placeholder="Volume in m3"/>
+			<input class="option" type="checkbox" placeholder="Deductible option"/>
+		</div>
+
+	</div>
+	<br>
+	<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+
+		<button id='compute' type="button" class="btn btn-default btn-lg">Simuler le prix</button>
+    <br>
+		<div  class="alert alert-warning" id="actors">
+		</div>
+
+  </div>
+		<script src="assets/js/convargo.js"></script>
+		<script src="assets/js/index.js"></script>
+
+
+</section>
+
+<!-- Fourth (Contact) section -->
+<section class="section" id="contact">
+	<div class="container">
+
+		<h2 class="text-center title">Me contacter</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Vous avez une question ou une suggestion ?</p>
+				<p>N'hésiter pas à me contcter.</p>
+				<p><b>ossama.ougzin@devinci.fr</b><br><br></p>
+				<ul class="list-inline list-social">
+					<li><a href="https://github.com/ossama95" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="https://www.linkedin.com/in/ossama-ougzin-1b224714b/" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="assets/js/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+<script src="assets/js/magister.js"></script>
+</body>
 </html>
